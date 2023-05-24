@@ -6,7 +6,6 @@ from werkzeug.utils import secure_filename
 import datetime
 import pandas as pd                 # Para la manipulación y análisis de los datos
 import numpy as np                  # Para crear vectores y matrices n dimensionales
-import csv
 from apyori import apriori
 
 
@@ -14,18 +13,13 @@ application = Flask(__name__)
 
 application.config["UPLOAD_FOLDER"] = "static/"
 
-def format_results(items):
-    i = []
-    for item, count in sorted(items, key=lambda x: x[1]):
-        i.append(item)
-    return set(i)
 
 @application.route('/')
 def upload_file():
     return render_template('index.html')
 
 #Result page.
-@application.route('/display', methods = ['GET', 'POST'])
+@application.route('/apriori', methods = ['GET', 'POST'])
 def save_file():
     if request.method == 'POST':
         f = request.files['file']

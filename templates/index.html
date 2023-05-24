@@ -5,14 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
-  <h1>Data Mining Apriori Algorithm at Google App Engine</h1>
-  <form action = "/display" onsubmit="Validate(this);" method = "POST" enctype = "multipart/form-data">
+  <h1>Reglas de Asociación</h1>
+  <form action = "/apriori" onsubmit="Validate(this);" method = "POST" enctype = "multipart/form-data">
     <p>
     input file: <input type="file" name="file"><br>
     minimal support: <input type="text" name="support"><br>
     confidence: <input type="text" name="confidence"><br>
     lift: <input type="text" name="lift"><br>
     <input type="submit" value="Upload and Run Apriori Algorithm">
+    </p>
+  </form>
+  <h1>Métricas de distancia</h1>
+  <h2 Sólo necesitas introducir un archivo csv>
+  <form action = "/metricas" onsubmit="Validate(this);" method = "POST" enctype = "multipart/form-data">
+    <p>
+    input file: <input type="file" name="file"><br>
+    <input type="submit" value="Upload and Run ">
     </p>
   </form>
 </body>

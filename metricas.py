@@ -24,7 +24,10 @@ def upload_file():
 def save_file():
     if request.method == 'POST':
         f = request.files['file']
-        
+        colu =request.form['columna']
+        fil =request.form['fila']
+        colum =int(colu)
+        filas = int(fil)
     
         filename = secure_filename(f.filename)
 
@@ -47,8 +50,8 @@ def save_file():
         MEuclidiana = pd.DataFrame(DstEuclidiana)
 
         
-        Objeto1 = MEstandarizada[0]
-        Objeto2 = MEstandarizada[1]
+        Objeto1 = MEstandarizada[colum]
+        Objeto2 = MEstandarizada[filas]
         dstEuclidiana = distance.euclidean(Objeto1,Objeto2)
         
 
@@ -60,14 +63,10 @@ def save_file():
         #calculating the algorithm execution time
         end = datetime.datetime.now()
         program_run_time = str((end - start))  
-
-
-
-
       
         
 
-    return render_template('content1.html', filename =filename,content=content, dstEuclidiana=dstEuclidiana,MEuclidiana=MEuclidiana.to_html()) 
+    return render_template('content1.html', filename =filename,colum=colum, filas=filas, content=content, dstEuclidiana=dstEuclidiana,MEuclidiana=MEuclidiana.to_html()) 
 
 
 

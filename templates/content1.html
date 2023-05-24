@@ -7,12 +7,45 @@
 <body>
   <h1>Métricas de distancia</h1>
   <h3>Input file: {{filename}}</h3>
-  <h3>Contenido: <b><i>{{ content | safe }}  </i>  </b></h3>
-  <h3>Distancia: <b><i>{{ dstEuclidiana }}  </i>  </b></h3>
-  <h3>Columna: <b><i>{{ colum }}  </i>  </b></h3>
-  <h3>Filas: <b><i>{{ filas }}  </i>  </b></h3>
+  <h3>Contenido: <b><i>{{ content }}  </i>  </b></h3>
+  <h2>Con estandarización</h2>
+
   <h3>Matriz Euclidiana: <b><i>{{ MEuclidiana | safe }}  </i>  </b></h3>
+  <h3>Comprobamos:</h3>
+  <h3>La distancia entra la columna {{ colum }} y la fila {{ filas }} es:  <b><i>{{ dstEuclidiana }}  </i>  </b></h3>
+
+  <h3>Matriz Chebyshev: <b><i>{{ MChebyshev | safe }}  </i>  </b></h3>
+  <h3>Comprobamos:</h3>
+  <h3>La distancia entra la columna {{ colum }} y la fila {{ filas }} es:  <b><i>{{ dstChebyshev }}  </i>  </b></h3>
+
+  <h3>Matriz Manhattan: <b><i>{{ MManhattan | safe }}  </i>  </b></h3>
+  <h3>Comprobamos:</h3>
+  <h3>La distancia entra la columna {{ colum }} y la fila {{ filas }} es:  <b><i>{{ dstManhattan }}  </i>  </b></h3>
+
+  <h3>Matriz Minkowski: <b><i>{{ MMinkowski | safe }}  </i>  </b></h3>
+  <h3>Comprobamos:</h3>
+  <h3>La distancia entra la columna {{ colum }} y la fila {{ filas }} es:  <b><i>{{ dstMinkowski }}  </i>  </b></h3>
+  <h3>Tiempo de ejecución: <b><i>{{ program_run_time }}  </i>  </b></h3>
+
+  <h2>Con normalización</h2>
   
+  <h3>Matriz Euclidiana: <b><i>{{ MNEuclidiana | safe }}  </i>  </b></h3>
+  <h3>Comprobamos:</h3>
+  <h3>La distancia entra la columna {{ colum }} y la fila {{ filas }} es:  <b><i>{{ dstNEuclidiana }}  </i>  </b></h3>
+
+  <h3>Matriz Chebyshev: <b><i>{{ MNChebyshev | safe }}  </i>  </b></h3>
+  <h3>Comprobamos:</h3>
+  <h3>La distancia entra la columna {{ colum }} y la fila {{ filas }} es:  <b><i>{{ dstNChebyshev }}  </i>  </b></h3>
+
+  <h3>Matriz Manhattan: <b><i>{{ MNManhattan | safe }}  </i>  </b></h3>
+  <h3>Comprobamos:</h3>
+  <h3>La distancia entra la columna {{ colum }} y la fila {{ filas }} es:  <b><i>{{ dstNManhattan }}  </i>  </b></h3>
+
+  <h3>Matriz Minkowski: <b><i>{{ NMMinkowski | safe }}  </i>  </b></h3>
+  <h3>Comprobamos:</h3>
+  <h3>La distancia entra la columna {{ colum }} y la fila {{ filas }} es:  <b><i>{{ dstNMinkowski }}  </i>  </b></h3>
+  <h3>Tiempo de ejecución: <b><i>{{ program_run_time }}  </i>  </b></h3>
+
 
 </body>
 </html>

@@ -2,8 +2,8 @@
 Clone the repo
 
 1. Get a copy of this repo using git clone
-   ```sh
-   $ git clone (https://github.com/melaniaromero/srene.git) 
+ ```sh
+ $ git clone (https://github.com/melaniaromero/srene.git) 
    ```
 2. Install the python requirements
   ``` sh

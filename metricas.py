@@ -47,6 +47,9 @@ def save_file():
         MEuclidiana = pd.DataFrame(DstEuclidiana)
 
         
+        Objeto1 = MEstandarizada[0]
+        Objeto2 = MEstandarizada[1]
+        dstEuclidiana = distance.euclidean(Objeto1,Objeto2)
         
 
         #######################NORMALIZAMOS####################
@@ -64,7 +67,7 @@ def save_file():
       
         
 
-    return render_template('content1.html', filename =filename,content=content, MEuclidiana=MEuclidiana.to_html()) 
+    return render_template('content1.html', filename =filename,content=content, dstEuclidiana=dstEuclidiana,MEuclidiana=MEuclidiana.to_html()) 
 
 
 

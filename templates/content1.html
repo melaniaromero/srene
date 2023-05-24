@@ -7,8 +7,8 @@
 <body>
   <h1>Métricas de distancia</h1>
   <h3>Input file: {{filename}}</h3>
-  <h3>Contenido: <b><i>{{ content }}  </i>  </b></h3>
-  
+  <h3>Contenido: <b><i>{{ content | safe }}  </i>  </b></h3>
+  <h3>Distancia: <b><i>{{ dstEuclidiana }}  </i>  </b></h3>
   <h3>Matriz Euclidiana: <b><i>{{ MEuclidiana | safe }}  </i>  </b></h3>
   
 

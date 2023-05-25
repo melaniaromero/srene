@@ -1,4 +1,4 @@
-# Apriori-Algortithm-Flask
+# Reglas de asociación y Métricas de distancia
 Clone the repo
 
 1. Get a copy of this repo using git clone

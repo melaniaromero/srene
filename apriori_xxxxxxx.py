@@ -7,6 +7,10 @@ import datetime
 import pandas as pd                 # Para la manipulación y análisis de los datos
 import numpy as np                  # Para crear vectores y matrices n dimensionales
 from apyori import apriori
+import matplotlib.pyplot as plt   # Para la generación de gráficas a partir de los datos
+import seaborn as sns             # Para la visualización de datos basado en matplotlib
+import matplotlib
+matplotlib.use('Agg')
 
 
 application = Flask(__name__)
@@ -52,6 +56,12 @@ def save_file():
         Lista = Lista.groupby(by=[0], as_index=False).count().sort_values(by=['Frecuencia'], ascending=True) #Conteo
         Lista['Porcentaje'] = (Lista['Frecuencia'] / Lista['Frecuencia'].sum()) #Porcentaje
         Lista = Lista.rename(columns={0 : 'Item'})
+        plt.figure(figsize=(30,20), dpi=100)
+        plt.ylabel('Item')
+        plt.xlabel('Frecuencia')
+        plt.barh(Lista['Item'], width=Lista['Frecuencia'], color='blue')
+        plt.show()
+        plt.savefig('static/my_plot.png')
         TransaccionesLista = DatosTransacciones.stack().groupby(level=0).apply(list).tolist()
         items = apriori(TransaccionesLista,min_support =float(s),min_confidence = float(c),min_lift = int(l))
         #print(items)
@@ -68,7 +78,8 @@ def save_file():
       
         
 
-    return render_template('content.html', s=s,c=c, l=l, filename =filename,content=content, ResultadosC1=ResultadosC1, total_item=total_item) 
+    return render_template('content.html', s=s,c=c, l=l, filename =filename,content=content, ResultadosC1=ResultadosC1, total_item=total_item,
+                            program_run_time=program_run_time, get_plot = True, plot_url = 'static/my_plot.png') 
 
 
 

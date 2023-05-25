@@ -5,9 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
-    {% if plot_url %}
-    <img src= {{plot_url}} alt = "Chart cannot be displayed">
+  <h3>Input file: {{filename}}</h3>
+  <h3>Contenido: <b><i>{{ content }}  </i>  </b></h3>
+  <h3>Tiempo de ejecución: <b><i>{{ program_run_time }}  </i>  </b></h3>
+  <h2>Evaluación visual</h2>
+  {% if plot_url1 %}
+    <img src= {{plot_url1}} alt = "Chart cannot be displayed">
     {% endif %}
+
+
+
 
 </body>
 </html>

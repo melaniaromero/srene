@@ -44,12 +44,19 @@ def save_file():
 
         rango1=[i for i in range(2,12)]
         BCancer = pd.read_csv(filepath, usecols=rango1)
+        #Evaluación visual
         BCancerConcavity=BCancer.groupby('Concavity').size()
         #seleccion de caracteristicas
+        #Evaluación visual
         sns.pairplot(BCancer, hue='Concavity')
         plt.savefig('static/my_plot.png')
 
-       
+        sns.scatterplot(x='Radius', y ='Perimeter', data=BCancer, hue='Concavity')
+        plt.title('Gráfico de dispersión')
+        plt.xlabel('Radius')
+        plt.ylabel('Perimeter')
+        plt.show()
+        plt.savefig('static/my_plot1.png')
         
         #calculating the algorithm execution time
         end = datetime.datetime.now()
@@ -58,7 +65,7 @@ def save_file():
         
 
     return render_template('content2.html',  program_run_time= program_run_time, filename =filename, 
-                           content=content, get_plot = True, plot_url = 'static/my_plot.png') 
+                           content=content, get_plot = True, plot_url = 'static/my_plot.png',  plot_url1 = 'static/my_plot1.png') 
 
 
 

@@ -14,4 +14,5 @@ pip3 install -r requirements.txt
 3. Run the code
 ```sh
 python apriori_xxxxxxx.py
+python metricas.py
   ```
